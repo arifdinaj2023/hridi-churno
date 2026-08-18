@@ -18,7 +18,9 @@
 <section class="section"><div class="wrap"><h2 class="title">❓ সাধারণ প্রশ্নোত্তর</h2><p class="sub">অর্ডারের আগে সাধারণ তথ্য</p><div class="faq"><details><summary>প্যাকেটের ওজন কত?</summary><p>500g।</p></details><details><summary>দাম কত?</summary><p>বর্তমান অফার মূল্য ৳2,500, ৳500 ছাড় ও Free Delivery।</p></details><details><summary>কীভাবে অর্ডার করব?</summary><p>Order Form পূরণ করুন অথবা 01515620563 নম্বরে যোগাযোগ করুন।</p></details><details><summary>গর্ভবতী অবস্থায় সেবন করা যাবে?</summary><p>ব্যবহারের আগে চিকিৎসকের পরামর্শ নিন।</p></details></div></div></section>
 <div class="bottom"><div class="bottomin"><div>💬 WhatsApp / Call<br><span class="big">01515620563</span></div><div>🌿 <strong>NATURAL REMEDY</strong><br><small>PURE • NATURAL • RESPONSIBLE</small></div><a class="btn red" href="#order">অর্ডার করুন এখনই →</a></div></div><footer class="footer">© 2026 Natural Remedy. All Rights Reserved.</footer><a class="float" target="_blank" href="https://wa.me/8801515620563">💬 WhatsApp</a>
 <script>
+
 function orderNow() {
+
   let n = document.getElementById('name').value.trim();
   let p = document.getElementById('phone').value.trim();
   let d = document.getElementById('district').value.trim();
@@ -29,7 +31,12 @@ function orderNow() {
     return;
   }
 
-  const data = {
+  const button = document.querySelector('.orderbox button');
+
+  button.disabled = true;
+  button.innerText = 'অর্ডার সেভ হচ্ছে...';
+
+  const form = {
     name: n,
     phone: p,
     district: d,
@@ -37,22 +44,34 @@ function orderNow() {
     quantity: 1
   };
 
-  fetch('https://script.google.com/macros/s/AKfycbw7yaH4F9uvdXeUa7aXSYugVvIFeaCYENoe_cEpHg6ohgdI9vZ3b9EUPEsXW89o-94t/exec', {
-    method: 'POST',
-    mode: 'no-cors',
-    headers: {
-      'Content-Type': 'text/plain;charset=utf-8'
-    },
-    body: JSON.stringify(data)
-  });
+  google.script.run
 
-  alert('🎉 আপনার অর্ডার গ্রহণ করা হয়েছে!\nআমরা শীঘ্রই আপনার সাথে যোগাযোগ করব।');
+    .withSuccessHandler(function(result) {
 
-  document.getElementById('name').value = '';
-  document.getElementById('phone').value = '';
-  document.getElementById('district').value = '';
-  document.getElementById('address').value = '';
+      alert('✅ আপনার অর্ডার সফলভাবে গ্রহণ করা হয়েছে।');
+
+      document.getElementById('name').value = '';
+      document.getElementById('phone').value = '';
+      document.getElementById('district').value = '';
+      document.getElementById('address').value = '';
+
+      button.disabled = false;
+      button.innerText = 'অর্ডার করুন →';
+
+    })
+
+    .withFailureHandler(function(error) {
+
+      alert('❌ অর্ডার সেভ হয়নি। দয়া করে আবার চেষ্টা করুন।');
+
+      console.log(error);
+
+      button.disabled = false;
+      button.innerText = 'অর্ডার করুন →';
+
+    })
+
+    .submitOrder(form);
 }
+
 </script>
-</body>
-</html>
