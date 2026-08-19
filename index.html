@@ -3,14 +3,14 @@
 
 <head>
 
-  <base target="_top">
-
   <meta charset="UTF-8">
 
-  <meta name="viewport"
-        content="width=device-width, initial-scale=1.0">
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
 
-  <title>হৃদি চূর্ণ — অর্ডার করুন</title>
+  <title>হৃদি চূর্ণ — প্রাকৃতিক হারবাল পণ্য</title>
 
 
   <style>
@@ -20,93 +20,517 @@
     }
 
 
+    html {
+      scroll-behavior: smooth;
+    }
+
+
     body {
       margin: 0;
-      font-family: Arial, "Noto Sans Bengali", sans-serif;
+
+      font-family:
+        Arial,
+        "Noto Sans Bengali",
+        sans-serif;
+
       background: #f5f7ed;
+
       color: #173f2c;
+
+      line-height: 1.7;
     }
 
 
-    .topbar {
-      background: #123f2b;
-      color: white;
-      text-align: center;
-      padding: 12px;
-      font-size: 15px;
-      font-weight: bold;
-    }
+    /* =========================
+       HEADER
+    ========================= */
 
+    header {
 
-    .container {
-      max-width: 850px;
-      margin: 35px auto;
-      padding: 20px;
-    }
+      position: sticky;
 
+      top: 0;
 
-    .card {
+      z-index: 1000;
+
       background: white;
-      border-radius: 22px;
-      padding: 35px;
-      box-shadow: 0 10px 35px rgba(0,0,0,0.10);
+
+      border-bottom:
+        1px solid #e5e5e5;
     }
 
 
-    h1 {
-      text-align: center;
-      margin: 0;
-      font-size: 38px;
+    .nav {
+
+      max-width: 1150px;
+
+      margin: auto;
+
+      padding:
+        15px 20px;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: space-between;
+
+      gap: 20px;
+    }
+
+
+    .logo {
+
+      font-size: 24px;
+
+      font-weight: 800;
+
       color: #123f2b;
     }
 
 
-    .subtitle {
-      text-align: center;
-      margin: 10px 0 30px;
-      color: #666;
+    .logo span {
+      color: #168b4d;
+    }
+
+
+    .nav a {
+
+      text-decoration: none;
+
+      color: #173f2c;
+
+      font-weight: bold;
+
+      margin-left: 20px;
+    }
+
+
+    .nav .order-link {
+
+      background: #ad2929;
+
+      color: white;
+
+      padding:
+        10px 20px;
+
+      border-radius: 10px;
+    }
+
+
+    /* =========================
+       HERO
+    ========================= */
+
+    .hero {
+
+      padding:
+        75px 20px;
+
+      background:
+        linear-gradient(
+          135deg,
+          #eef8f0,
+          #fffaf0
+        );
+    }
+
+
+    .hero-inner {
+
+      max-width: 1150px;
+
+      margin: auto;
+
+      display: grid;
+
+      grid-template-columns:
+        1fr 1fr;
+
+      gap: 50px;
+
+      align-items: center;
+    }
+
+
+    .hero h1 {
+
+      font-size: 52px;
+
+      line-height: 1.2;
+
+      margin:
+        0 0 15px;
+
+      color: #123f2b;
+    }
+
+
+    .hero h1 span {
+      color: #ad2929;
+    }
+
+
+    .hero-text {
+
+      font-size: 19px;
+
+      color: #555;
+
+      margin-bottom: 25px;
+    }
+
+
+    .hero-buttons {
+
+      display: flex;
+
+      gap: 15px;
+
+      flex-wrap: wrap;
+    }
+
+
+    .btn {
+
+      display: inline-block;
+
+      padding:
+        14px 25px;
+
+      border-radius: 10px;
+
+      text-decoration: none;
+
+      font-weight: bold;
+
       font-size: 17px;
     }
 
 
-    .offer {
-      background: #fff5df;
-      border: 1px solid #e4c98a;
-      border-radius: 12px;
-      padding: 15px;
-      text-align: center;
-      margin-bottom: 25px;
-      font-weight: bold;
+    .btn-red {
+
+      background: #ad2929;
+
+      color: white;
     }
 
 
-    .price {
+    .btn-green {
+
+      background: #168b4d;
+
+      color: white;
+    }
+
+
+    .hero-card {
+
+      background: white;
+
+      border-radius: 25px;
+
+      padding: 40px;
+
       text-align: center;
-      margin: 20px 0 30px;
+
+      box-shadow:
+        0 15px 40px
+        rgba(0,0,0,0.10);
+    }
+
+
+    .product-icon {
+
+      font-size: 90px;
+
+      margin-bottom: 15px;
+    }
+
+
+    .hero-card h2 {
+
+      margin: 0;
+
+      color: #123f2b;
+
+      font-size: 30px;
+    }
+
+
+    .pack {
+
+      color: #777;
+
+      margin: 5px 0 20px;
     }
 
 
     .old-price {
-      color: #777;
-      text-decoration: line-through;
+
+      color: #888;
+
+      text-decoration:
+        line-through;
+
       font-size: 18px;
     }
 
 
-    .new-price {
+    .price {
+
+      font-size: 40px;
+
       color: #ad2929;
-      font-size: 38px;
+
       font-weight: bold;
-      margin-left: 10px;
+    }
+
+
+    /* =========================
+       SECTION
+    ========================= */
+
+    .section {
+
+      padding:
+        70px 20px;
+    }
+
+
+    .wrap {
+
+      max-width: 1100px;
+
+      margin: auto;
+    }
+
+
+    .section-title {
+
+      text-align: center;
+
+      font-size: 35px;
+
+      color: #123f2b;
+
+      margin:
+        0 0 10px;
+    }
+
+
+    .section-sub {
+
+      text-align: center;
+
+      color: #777;
+
+      margin-bottom: 40px;
+    }
+
+
+    /* =========================
+       BENEFITS
+    ========================= */
+
+    .cards {
+
+      display: grid;
+
+      grid-template-columns:
+        repeat(3, 1fr);
+
+      gap: 20px;
+    }
+
+
+    .card {
+
+      background: white;
+
+      padding: 30px;
+
+      border-radius: 18px;
+
+      text-align: center;
+
+      box-shadow:
+        0 8px 25px
+        rgba(0,0,0,0.06);
+    }
+
+
+    .card-icon {
+
+      font-size: 45px;
+    }
+
+
+    .card h3 {
+
+      margin:
+        10px 0;
+
+      color: #123f2b;
+    }
+
+
+    .card p {
+
+      color: #666;
+
+      margin: 0;
+    }
+
+
+    /* =========================
+       PRODUCT
+    ========================= */
+
+    .product-section {
+
+      background: #123f2b;
+
+      color: white;
+    }
+
+
+    .product-section
+    .section-title {
+
+      color: white;
+    }
+
+
+    .product-info {
+
+      max-width: 750px;
+
+      margin: auto;
+
+      text-align: center;
+    }
+
+
+    .product-info p {
+
+      font-size: 18px;
+    }
+
+
+    .warning {
+
+      margin-top: 25px;
+
+      padding: 18px;
+
+      border-radius: 12px;
+
+      background: #fff5df;
+
+      color: #4b3a18;
+
+      text-align: left;
+    }
+
+
+    /* =========================
+       ORDER SECTION
+    ========================= */
+
+    .order-section {
+
+      background:
+        linear-gradient(
+          135deg,
+          #fffaf0,
+          #eef8f0
+        );
+    }
+
+
+    .order-grid {
+
+      max-width: 1000px;
+
+      margin: auto;
+
+      display: grid;
+
+      grid-template-columns:
+        0.8fr 1.2fr;
+
+      gap: 35px;
+
+      align-items: start;
+    }
+
+
+    .order-info {
+
+      padding: 20px;
+    }
+
+
+    .order-info h2 {
+
+      font-size: 38px;
+
+      color: #123f2b;
+
+      margin-top: 0;
+    }
+
+
+    .offer-box {
+
+      background: #fff5df;
+
+      border:
+        1px solid #e4c98a;
+
+      border-radius: 14px;
+
+      padding: 20px;
+
+      margin-top: 20px;
+    }
+
+
+    .order-form {
+
+      background: white;
+
+      padding: 30px;
+
+      border-radius: 20px;
+
+      box-shadow:
+        0 12px 35px
+        rgba(0,0,0,0.10);
+    }
+
+
+    .order-form h3 {
+
+      margin-top: 0;
+
+      font-size: 27px;
+
+      color: #123f2b;
     }
 
 
     label {
+
       display: block;
-      margin-top: 18px;
-      margin-bottom: 7px;
+
+      margin-top: 17px;
+
+      margin-bottom: 6px;
+
       font-weight: bold;
-      color: #173f2c;
     }
 
 
@@ -114,15 +538,19 @@
     textarea {
 
       width: 100%;
+
       padding: 14px;
 
-      border: 1px solid #d5d5d5;
+      border:
+        1px solid #d5d5d5;
+
       border-radius: 10px;
 
       font-size: 16px;
-      outline: none;
 
       font-family: inherit;
+
+      outline: none;
     }
 
 
@@ -132,32 +560,38 @@
       border-color: #168b4d;
 
       box-shadow:
-        0 0 0 3px rgba(22,139,77,0.10);
+        0 0 0 3px
+        rgba(22,139,77,0.10);
     }
 
 
     textarea {
+
       min-height: 110px;
+
       resize: vertical;
     }
 
 
-    .quantity-box {
+    .quantity-row {
 
       display: flex;
-      gap: 12px;
+
       align-items: center;
+
+      gap: 12px;
     }
 
 
-    .quantity-box input {
-      max-width: 150px;
+    .quantity-row input {
+
+      max-width: 140px;
     }
 
 
     .total {
 
-      margin-top: 25px;
+      margin-top: 20px;
 
       padding: 18px;
 
@@ -167,49 +601,49 @@
 
       text-align: center;
 
-      font-size: 21px;
+      font-size: 22px;
 
       font-weight: bold;
     }
 
 
-    .total small {
+    .total-price {
 
-      font-size: 15px;
-      color: #168b4d;
+      color: #ad2929;
     }
 
 
-    .order-btn {
+    .submit-btn {
 
       width: 100%;
 
-      border: none;
+      margin-top: 20px;
 
-      background: #ad2929;
-
-      color: white;
+      border: 0;
 
       padding: 17px;
 
       border-radius: 12px;
+
+      background: #ad2929;
+
+      color: white;
 
       font-size: 19px;
 
       font-weight: bold;
 
       cursor: pointer;
-
-      margin-top: 25px;
     }
 
 
-    .order-btn:hover {
+    .submit-btn:hover {
+
       background: #8f2020;
     }
 
 
-    .order-btn:disabled {
+    .submit-btn:disabled {
 
       opacity: 0.6;
 
@@ -223,12 +657,13 @@
 
       text-align: center;
 
-      padding: 30px;
+      padding: 40px 20px;
     }
 
 
     .success-icon {
-      font-size: 55px;
+
+      font-size: 65px;
     }
 
 
@@ -236,59 +671,110 @@
 
       color: #168b4d;
 
-      font-size: 30px;
+      font-size: 32px;
     }
 
 
-    .phone {
+    .error {
 
-      font-size: 20px;
+      display: none;
+
+      margin-top: 15px;
+
+      padding: 13px;
+
+      background: #ffe5e5;
+
+      color: #a00000;
+
+      border-radius: 10px;
+
+      text-align: center;
+    }
+
+
+    /* =========================
+       FAQ
+    ========================= */
+
+    .faq {
+
+      max-width: 800px;
+
+      margin: auto;
+    }
+
+
+    details {
+
+      background: white;
+
+      margin-bottom: 12px;
+
+      padding: 18px 20px;
+
+      border-radius: 12px;
+
+      box-shadow:
+        0 5px 18px
+        rgba(0,0,0,0.05);
+    }
+
+
+    summary {
+
+      cursor: pointer;
 
       font-weight: bold;
 
-      color: #ad2929;
+      color: #123f2b;
     }
 
 
-    .footer {
+    /* =========================
+       FOOTER
+    ========================= */
+
+    footer {
+
+      background: #123f2b;
+
+      color: white;
 
       text-align: center;
 
-      color: #777;
-
-      margin-top: 25px;
-
-      font-size: 14px;
+      padding: 30px 20px;
     }
 
 
-    @media(max-width:600px) {
+    /* =========================
+       MOBILE
+    ========================= */
 
-      .container {
+    @media(max-width: 800px) {
 
-        margin: 15px auto;
+      .hero-inner,
+      .order-grid {
 
-        padding: 12px;
+        grid-template-columns: 1fr;
       }
 
 
-      .card {
+      .cards {
 
-        padding: 22px;
+        grid-template-columns: 1fr;
       }
 
 
-      h1 {
+      .hero h1 {
 
-        font-size: 30px;
+        font-size: 38px;
       }
 
 
-      .new-price {
+      .nav a:not(.order-link) {
 
-        display: block;
-
-        margin: 8px 0 0;
+        display: none;
       }
 
     }
@@ -301,300 +787,720 @@
 <body>
 
 
-  <div class="topbar">
+  <!-- =========================
+       HEADER
+  ========================= -->
 
-    🎁 সীমিত সময়ের অফার — ৳500 ছাড় + FREE DELIVERY
+  <header>
 
-  </div>
+    <div class="nav">
 
+      <div class="logo">
 
-  <div class="container">
+        🌿 NATURAL <span>REMEDY</span>
 
-
-    <div class="card">
-
-
-      <!-- ORDER AREA -->
-
-      <div id="orderArea">
+      </div>
 
 
-        <h1>হৃদি চূর্ণ</h1>
+      <nav>
+
+        <a href="#benefits">
+          উপকারিতা
+        </a>
+
+        <a href="#product">
+          পণ্য
+        </a>
+
+        <a href="#faq">
+          প্রশ্নোত্তর
+        </a>
+
+        <a
+          href="#order"
+          class="order-link"
+        >
+          অর্ডার করুন
+        </a>
+
+      </nav>
+
+    </div>
+
+  </header>
 
 
-        <div class="subtitle">
 
-          HRIDI CHURNO — Natural Herbal Product
+  <!-- =========================
+       HERO
+  ========================= -->
+
+  <section class="hero">
+
+    <div class="hero-inner">
+
+
+      <div>
+
+        <h1>
+
+          হৃদি চূর্ণ
+
+          <br>
+
+          <span>প্রাকৃতিক হারবাল পণ্য</span>
+
+        </h1>
+
+
+        <p class="hero-text">
+
+          দৈনন্দিন ব্যবহারের জন্য
+          প্রাকৃতিক উপাদানে তৈরি
+          হৃদি চূর্ণ।
+
+        </p>
+
+
+        <div class="hero-buttons">
+
+          <a
+            href="#order"
+            class="btn btn-red"
+          >
+            🛒 এখনই অর্ডার করুন
+          </a>
+
+
+          <a
+            href="#product"
+            class="btn btn-green"
+          >
+            বিস্তারিত দেখুন
+          </a>
 
         </div>
 
+      </div>
 
-        <div class="offer">
 
-          🌿 100% Natural Ingredients
-          &nbsp; • &nbsp;
+
+      <div class="hero-card">
+
+        <div class="product-icon">
+          🌿
+        </div>
+
+
+        <h2>
+          হৃদি চূর্ণ
+        </h2>
+
+
+        <div class="pack">
           500g Pack
-
         </div>
 
 
-        <div class="price">
+        <div>
 
           <span class="old-price">
             ৳3,000
           </span>
 
-          <span class="new-price">
-            ৳2,500
-          </span>
-
         </div>
 
 
-        <!-- ORDER FORM -->
-
-        <form id="orderForm">
-
-
-          <!-- NAME -->
-
-          <label>
-            আপনার নাম *
-          </label>
-
-          <input
-            type="text"
-            name="name"
-            placeholder="আপনার পূর্ণ নাম লিখুন"
-            required
-          >
-
-
-          <!-- PHONE -->
-
-          <label>
-            মোবাইল নম্বর *
-          </label>
-
-          <input
-            type="tel"
-            name="phone"
-            placeholder="01XXXXXXXXX"
-            pattern="01[0-9]{9}"
-            maxlength="11"
-            required
-          >
-
-
-          <!-- DISTRICT -->
-
-          <label>
-            জেলা *
-          </label>
-
-          <input
-            type="text"
-            name="district"
-            placeholder="আপনার জেলার নাম লিখুন"
-            required
-          >
-
-
-          <!-- ADDRESS -->
-
-          <label>
-            সম্পূর্ণ ঠিকানা *
-          </label>
-
-          <textarea
-            name="address"
-            placeholder="বাসা/গ্রাম, রাস্তা, থানা, বিস্তারিত ঠিকানা লিখুন"
-            required
-          ></textarea>
-
-
-          <!-- QUANTITY -->
-
-          <label>
-            Quantity *
-          </label>
-
-
-          <div class="quantity-box">
-
-            <input
-              type="number"
-              id="quantity"
-              name="quantity"
-              value="1"
-              min="1"
-              max="10"
-              required
-              oninput="calculateTotal()"
-            >
-
-            <span>
-              প্যাক
-            </span>
-
-          </div>
-
-
-          <!-- TOTAL -->
-
-          <div class="total">
-
-            মোট মূল্য:
-
-            <span id="totalPrice">
-              ৳2,500
-            </span>
-
-            <br>
-
-            <small>
-              🚚 Free Delivery
-            </small>
-
-          </div>
-
-
-          <!-- SUBMIT BUTTON -->
-
-          <button
-            type="submit"
-            class="order-btn"
-            id="submitBtn"
-          >
-
-            🛒 অর্ডার কনফার্ম করুন
-
-          </button>
-
-
-        </form>
-
-
-        <div class="footer">
-
-          অর্ডার সংক্রান্ত প্রয়োজনে কল করুন:
-          <strong>01515620563</strong>
-
+        <div class="price">
+          ৳2,500
         </div>
-
-
-      </div>
-
-
-      <!-- SUCCESS AREA -->
-
-      <div
-        class="success"
-        id="successArea"
-      >
-
-        <div class="success-icon">
-          🎉
-        </div>
-
-
-        <h2>
-          অর্ডার সফল হয়েছে!
-        </h2>
 
 
         <p>
-          আপনার অর্ডারটি আমরা পেয়েছি।
+          🚚 Free Delivery
         </p>
-
-
-        <p>
-          খুব শীঘ্রই আমাদের একজন প্রতিনিধি
-          আপনার সাথে যোগাযোগ করবেন।
-        </p>
-
-
-        <p class="phone">
-
-          📞 01515620563
-
-        </p>
-
 
       </div>
 
 
     </div>
 
+  </section>
 
-  </div>
 
+
+  <!-- =========================
+       BENEFITS
+  ========================= -->
+
+  <section
+    class="section"
+    id="benefits"
+  >
+
+    <div class="wrap">
+
+      <h2 class="section-title">
+        🌿 কেন হৃদি চূর্ণ?
+      </h2>
+
+
+      <p class="section-sub">
+        প্রাকৃতিক উপাদান দিয়ে তৈরি
+      </p>
+
+
+      <div class="cards">
+
+
+        <div class="card">
+
+          <div class="card-icon">
+            ❤️
+          </div>
+
+          <h3>
+            প্রাকৃতিক পণ্য
+          </h3>
+
+          <p>
+            প্রাকৃতিক উপাদান দিয়ে
+            প্রস্তুত করা হয়েছে।
+          </p>
+
+        </div>
+
+
+        <div class="card">
+
+          <div class="card-icon">
+            🌱
+          </div>
+
+          <h3>
+            হারবাল উপাদান
+          </h3>
+
+          <p>
+            নির্বাচিত প্রাকৃতিক
+            উপাদানের সমন্বয়।
+          </p>
+
+        </div>
+
+
+        <div class="card">
+
+          <div class="card-icon">
+            📦
+          </div>
+
+          <h3>
+            500g Pack
+          </h3>
+
+          <p>
+            সুবিধাজনক 500g প্যাকেজ।
+          </p>
+
+        </div>
+
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- =========================
+       PRODUCT
+  ========================= -->
+
+  <section
+    class="section product-section"
+    id="product"
+  >
+
+    <div class="product-info">
+
+      <h2 class="section-title">
+        🌿 প্রাকৃতিক উপাদানসমূহ
+      </h2>
+
+
+      <p>
+        হৃদি চূর্ণ প্রাকৃতিক উপাদানের
+        সমন্বয়ে প্রস্তুত একটি হারবাল পণ্য।
+      </p>
+
+
+      <div class="warning">
+
+        <strong>
+          গুরুত্বপূর্ণ:
+        </strong>
+
+        হৃদি চূর্ণ কোনো রোগের
+        চিকিৎসা বা নিরাময়ের নিশ্চয়তা
+        দেয়—এমন দাবি করা হচ্ছে না।
+
+        জরুরি উপসর্গ হলে দ্রুত
+        চিকিৎসা নিন এবং চিকিৎসকের
+        পরামর্শ ছাড়া নির্ধারিত ওষুধ
+        বন্ধ করবেন না।
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- =========================
+       ORDER
+  ========================= -->
+
+  <section
+    class="section order-section"
+    id="order"
+  >
+
+    <div class="order-grid">
+
+
+      <!-- ORDER INFO -->
+
+      <div class="order-info">
+
+        <h2>
+          অর্ডার করুন এখনই
+        </h2>
+
+
+        <p>
+          অফার মূল্য
+          <strong>৳2,500</strong>
+        </p>
+
+
+        <div class="offer-box">
+
+          🎁 <strong>
+            বিশেষ অফার
+          </strong>
+
+          <br><br>
+
+          ৳500 ছাড়
+
+          <br>
+
+          🚚 Free Delivery
+
+          <br>
+
+          📦 500g Pack
+
+        </div>
+
+
+        <p>
+          অর্ডার করার জন্য ডান পাশের
+          form পূরণ করুন।
+        </p>
+
+      </div>
+
+
+
+      <!-- ORDER FORM -->
+
+      <div class="order-form">
+
+        <div id="formArea">
+
+          <h3>
+            Order Form
+          </h3>
+
+
+          <form id="orderForm">
+
+
+            <label>
+              আপনার নাম *
+            </label>
+
+            <input
+              type="text"
+              name="name"
+              placeholder="আপনার পূর্ণ নাম"
+              required
+            >
+
+
+            <label>
+              মোবাইল নম্বর *
+            </label>
+
+            <input
+              type="tel"
+              name="phone"
+              placeholder="01XXXXXXXXX"
+              pattern="01[0-9]{9}"
+              maxlength="11"
+              required
+            >
+
+
+            <label>
+              জেলা *
+            </label>
+
+            <input
+              type="text"
+              name="district"
+              placeholder="আপনার জেলা"
+              required
+            >
+
+
+            <label>
+              সম্পূর্ণ ঠিকানা *
+            </label>
+
+            <textarea
+              name="address"
+              placeholder="বাসা/গ্রাম, রাস্তা, থানা, বিস্তারিত ঠিকানা"
+              required
+            ></textarea>
+
+
+            <label>
+              Quantity *
+            </label>
+
+
+            <div class="quantity-row">
+
+              <input
+                type="number"
+                id="quantity"
+                name="quantity"
+                value="1"
+                min="1"
+                max="10"
+                required
+              >
+
+              <span>
+                প্যাক
+              </span>
+
+            </div>
+
+
+            <div class="total">
+
+              মোট মূল্য:
+
+              <span
+                id="totalPrice"
+                class="total-price"
+              >
+                ৳2,500
+              </span>
+
+              <br>
+
+              <small>
+                🚚 Free Delivery
+              </small>
+
+            </div>
+
+
+            <div
+              id="error"
+              class="error"
+            >
+              অর্ডার পাঠানো যায়নি।
+              আবার চেষ্টা করুন।
+            </div>
+
+
+            <button
+              type="submit"
+              id="submitBtn"
+              class="submit-btn"
+            >
+              🛒 অর্ডার কনফার্ম করুন
+            </button>
+
+
+          </form>
+
+        </div>
+
+
+
+        <!-- SUCCESS -->
+
+        <div
+          id="success"
+          class="success"
+        >
+
+          <div class="success-icon">
+            🎉
+          </div>
+
+
+          <h2>
+            অর্ডার সফল হয়েছে!
+          </h2>
+
+
+          <p>
+            আপনার অর্ডারটি আমরা পেয়েছি।
+          </p>
+
+
+          <p>
+            খুব শীঘ্রই আমাদের প্রতিনিধি
+            আপনার সাথে যোগাযোগ করবেন।
+          </p>
+
+
+          <p>
+            📞 01515620563
+          </p>
+
+        </div>
+
+      </div>
+
+
+    </div>
+
+  </section>
+
+
+
+  <!-- =========================
+       FAQ
+  ========================= -->
+
+  <section
+    class="section"
+    id="faq"
+  >
+
+    <div class="wrap">
+
+      <h2 class="section-title">
+        ❓ সাধারণ প্রশ্নোত্তর
+      </h2>
+
+
+      <p class="section-sub">
+        অর্ডারের আগে সাধারণ তথ্য
+      </p>
+
+
+      <div class="faq">
+
+
+        <details>
+
+          <summary>
+            প্যাকেটের ওজন কত?
+          </summary>
+
+          <p>
+            500g।
+          </p>
+
+        </details>
+
+
+        <details>
+
+          <summary>
+            দাম কত?
+          </summary>
+
+          <p>
+            বর্তমান অফার মূল্য ৳2,500।
+            ৳500 ছাড় এবং Free Delivery।
+          </p>
+
+        </details>
+
+
+        <details>
+
+          <summary>
+            কীভাবে অর্ডার করব?
+          </summary>
+
+          <p>
+            Order Form পূরণ করে
+            অর্ডার কনফার্ম করুন।
+          </p>
+
+        </details>
+
+
+        <details>
+
+          <summary>
+            গর্ভবতী অবস্থায় ব্যবহার করা যাবে?
+          </summary>
+
+          <p>
+            ব্যবহারের আগে চিকিৎসকের
+            পরামর্শ নিন।
+          </p>
+
+        </details>
+
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- =========================
+       FOOTER
+  ========================= -->
+
+  <footer>
+
+    🌿 NATURAL REMEDY
+
+    <br>
+
+    © 2026 Natural Remedy.
+    All Rights Reserved.
+
+  </footer>
+
+
+
+  <!-- =========================
+       JAVASCRIPT
+  ========================= -->
 
   <script>
+
+
+    /*
+     * =========================================
+     * IMPORTANT
+     * =========================================
+     *
+     * এখানে আপনার Google Apps Script
+     * Web App URL বসাবেন।
+     *
+     */
+
+    const GOOGLE_SCRIPT_URL =
+      "https://script.google.com/macros/s/AKfycbwDg3pFb6V1UwBKb3p77xGhIbDV7--W0Z0RQn1n9XeQsIZjCGmuuqDLDL7Hh7qNrnbe/exec";
 
 
     const PRICE = 2500;
 
 
-    // =====================================
-    // TOTAL PRICE CALCULATION
-    // =====================================
 
-    function calculateTotal() {
+    /*
+     * =========================================
+     * TOTAL PRICE
+     * =========================================
+     */
 
-      let quantity =
-        Number(
-          document.getElementById("quantity").value
-        ) || 1;
+    const quantityInput =
+      document.getElementById("quantity");
 
 
-      if (quantity < 1) {
+    const totalPrice =
+      document.getElementById("totalPrice");
 
-        quantity = 1;
+
+    quantityInput.addEventListener(
+      "input",
+      function() {
+
+        let quantity =
+          Number(quantityInput.value) || 1;
+
+
+        if (quantity < 1) {
+
+          quantity = 1;
+
+          quantityInput.value = 1;
+
+        }
+
+
+        if (quantity > 10) {
+
+          quantity = 10;
+
+          quantityInput.value = 10;
+
+        }
+
+
+        const total =
+          quantity * PRICE;
+
+
+        totalPrice.innerText =
+          "৳" +
+          total.toLocaleString("bn-BD");
 
       }
+    );
 
 
-      if (quantity > 10) {
 
-        quantity = 10;
-
-        document.getElementById("quantity").value = 10;
-
-      }
-
-
-      const total =
-        quantity * PRICE;
-
-
-      document.getElementById("totalPrice").innerText =
-        "৳" + total.toLocaleString("bn-BD");
-
-    }
-
-
-    // =====================================
-    // SUBMIT ORDER
-    // =====================================
+    /*
+     * =========================================
+     * SUBMIT ORDER
+     * =========================================
+     */
 
     document
       .getElementById("orderForm")
       .addEventListener(
         "submit",
-        function(e) {
+        function(event) {
+
+          event.preventDefault();
 
 
-          // Stop page reload
-
-          e.preventDefault();
+          const form =
+            document.getElementById("orderForm");
 
 
           const button =
             document.getElementById("submitBtn");
 
 
-          // Disable button
+          const error =
+            document.getElementById("error");
+
+
+          error.style.display = "none";
+
 
           button.disabled = true;
 
@@ -603,54 +1509,67 @@
             "অর্ডার পাঠানো হচ্ছে...";
 
 
-          // Send order to Google Apps Script
+          /*
+           * Form data
+           */
 
-          google.script.run
-
-            .withSuccessHandler(
-              function(response) {
-
-
-                // Hide form
-
-                document
-                  .getElementById("orderArea")
-                  .style.display = "none";
+          const formData =
+            new FormData(form);
 
 
-                // Show success message
+          /*
+           * Send to Google Apps Script
+           */
 
-                document
-                  .getElementById("successArea")
-                  .style.display = "block";
-
-              }
-            )
-
-
-            .withFailureHandler(
-              function(error) {
-
-
-                alert(
-                  "অর্ডার পাঠানো যায়নি। আবার চেষ্টা করুন।"
-                );
+          fetch(
+            GOOGLE_SCRIPT_URL,
+            {
+              method: "POST",
+              body: formData,
+              mode: "no-cors"
+            }
+          )
 
 
-                button.disabled = false;
+          .then(
+            function() {
+
+              /*
+               * Google Apps Script-এ
+               * request পাঠানো হয়েছে।
+               */
+
+              document
+                .getElementById("formArea")
+                .style.display = "none";
 
 
-                button.innerText =
-                  "🛒 অর্ডার কনফার্ম করুন";
+              document
+                .getElementById("success")
+                .style.display = "block";
 
-              }
-            )
+            }
+          )
 
 
-            // Send form data
+          .catch(
+            function(err) {
 
-            .submitOrder(this);
+              console.error(err);
 
+
+              error.style.display =
+                "block";
+
+
+              button.disabled = false;
+
+
+              button.innerText =
+                "🛒 অর্ডার কনফার্ম করুন";
+
+            }
+          );
 
         }
       );
